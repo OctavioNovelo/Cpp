@@ -21,11 +21,11 @@ int count = 0;
 //Si la copia es igual a la pregunta, la bola no volvera a responder.
 void preguntas(string &pregunta) // &pregunta se recibe como referencia para poder obtener el tamaño correcto cuando se usa .length();
 {
-    cout << "What do you want ?\n";
+    cout << "Ask the ball: \n";
     getline(cin, pregunta);
     if (copia == pregunta)
     {
-        cout << "The ball has been talk...\n";
+        cout << "The ball has spoken...\n";
         count = 1;
     }
     else
