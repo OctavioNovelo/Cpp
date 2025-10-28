@@ -18,7 +18,7 @@ using namespace std;
 #define RESET    "\x1B[0m"
 
 int turno = 0;
-int n = 2;
+int n;
 vector<int> puntos;
 vector<string> nombres;
 
@@ -49,6 +49,10 @@ int operacion(int a, int b, int tipo)
 // Muestra los puntajes
 void mostrarPuntaje()
 {
+    //Casi nunca uso bool, quiero probar
+    bool todosBien = true;
+    bool todosMal = true;
+
     cout << CYAN << "\n--- Puntaje ---\n" << RESET;
     for ( int i = 0; i < n; i++)
     {
@@ -100,23 +104,19 @@ void jugarTurno(int jugador)
     }
 }
 
+
 // Comprobar puntos
-bool finDelJuego()
-{
-    for (int i = 0; i < n; i++)
-    {
-        if (puntos[i] <= 0)
-        {
+bool finDelJuego() {
+    for (int i = 0; i < n; i++) {
+        if (puntos[i] <= 0) {
             cout << YELLOW << "--- Fin del juego ---\n" << RESET;
             int ganador = 0;
-            for (int j = 1; j < n; j++)
-            {
-                if (puntos[j] > puntos[ganador])
-                {
-                    ganador = j;
-                }
+            for (int j = 1; j < n; j++) {
+                if (puntos[j] > puntos[ganador]) ganador = j;
             }
-            cout << GREEN << nombres[ganador] << " gana la partida con " << puntos[ganador] << "puntos\n" << RESET;
+            cout << GREEN << nombres[ganador]
+                 << " gana la partida con "
+                 << puntos[ganador] << " puntos\n" << RESET;
             return true;
         }
     }
