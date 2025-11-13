@@ -1,6 +1,4 @@
 #include <iostream>
-#include <bits/stdc++.h>
-#include <vector>
 
 using namespace std;
 
@@ -26,7 +24,7 @@ void Generar_calificaciones ()
     {
         for (int j = 0; j < materias; j++)
         {
-            calificaciones[i][j] = (rand() % 10 + 4);
+            calificaciones[i][j] = (rand() % 7 + 4);
         }
     }
 }
@@ -71,28 +69,29 @@ void Mostrar_Candidatos()
             if (calificaciones[i][j] <= 5){
                 repro = 1;
             }
-        }
-        if (promedios[i] >= 8 && repro == 0)
-        {
-            cout << "Alumno #" << i+1 << " es candidato a beca con un promedio de " << promedios[i] << "\n";;
+            if (promedios[j] >= 8 && repro == 0)
+            {
+                cout << "Alumno # " << i+1 << " es candidato a beca con un promedio de " << promedios[i] << "\n";
+            }
         }
         repro = 0;
     }
 }
 
-void Mostrar_reprobados ()
+void Mostrar_reprobados()
 {
     for (int i = 0; i < alumnos; i++)
     {
         for (int j = 0; j < materias; j++)
         {
-            if (calificaciones[i][j] <= 5){
+            if (calificaciones[i][j] <= 5)
+            {
                 repro += 1;
             }
         }
         if (repro >= 2)
         {
-            cout << "Alumno #" << i+1 << " NO es candidato a beca\n";
+            cout << "Alumno # " << i+1 << " NO es candidato a beca\n";
         }
     }
 }

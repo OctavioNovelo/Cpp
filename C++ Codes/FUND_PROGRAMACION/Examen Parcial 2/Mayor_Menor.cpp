@@ -50,7 +50,7 @@ void Mostrar_Mayor()
             }
         }
     }
-    cout << mayor << endl;
+    cout << "El numero mayor es: " << mayor << endl;
 }
 
 void Mostrar_Menor()
@@ -66,7 +66,7 @@ void Mostrar_Menor()
             }
         }
     }
-    cout << menor << endl;
+    cout << "El numero menor es: " << menor << endl;
 }
 int main()
 {
