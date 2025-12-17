@@ -1,5 +1,13 @@
-# Cpp-codes
-Here are my 2023 C++ codes that i do to prepare for the OMI 2023
+# C++
 
-October 31/10/2023
-Actually I'm trying to dominate C++, Base Data, Encryption and finish undertanding Git (thats the reason because in some commit messages is the simbol '#', but in the OMI practice codes all have the correct commit message)
+Here are the C++ code that i have been doing to master the bases of C++
+- Integer:
+Ejercicios donde se manejan Integers
+
+
+
+-Char and strings
+
+
+etc...
+
