@@ -130,7 +130,7 @@ void menu() {
     while (!volver)
     {
         
-        mostrar_Matriz();
+        // mostrar_Matriz();
         mostrar_Resultados();
 
         cout << "\n--- OPCIONES ---" << endl;
@@ -194,20 +194,23 @@ void menu() {
         }
         else if (opcion == '3')
         {
-            exportarResultados();
+            exportar_Resultados();
             cout << "Presione Enter para continuar...";
             cin.ignore();
             cin.get();
         }
         else if (opcion == '4')
         {
-            if (confirmarSalida())
+            if (doble_verificacion())
             {
                 volver = true;
             }
         }
     }
 }
+// ---------------------------------------------------------------------------------------------
+
+
 
 int main() {
     int opcionMenu;
@@ -225,13 +228,11 @@ int main() {
 
         switch (opcionMenu) {
             case 1:
-                seccionTopografia();
+                menu();
                 break;
             case 2:
-                if (confirmarSalida()) {
-                    exportarResultados(); // Exportacion automatica al salir
-                    terminar = true;
-                }
+                exportar_Resultados();
+                terminar = true;
                 break;
             default:
                 cout << "Opcion no valida." << endl;
@@ -239,6 +240,6 @@ int main() {
         }
     }
 
-    cout << "Saliendo del programa..." << endl;
+    cout << " Adios !!" << endl;
     return 0;
 }
